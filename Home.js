@@ -3,19 +3,18 @@ import { View, Text, Image, Button, BackHandler, StyleSheet } from 'react-native
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Tutorial 1',
+    title: 'Tamanduá Imóveis',
   };
 
   render() {
     const {navigate} = this.props.navigation;
     return (
       <View>
-        {/*<View style={styles.container}>*/}
-        {/*  <Image style={styles.logo} source={require('./assets/snack-icon.png')} />*/}
-        {/*  <Text style={styles.title} > React Native</Text>*/}
-        {/*</View>*/}
+        <View style={styles.container}>
+          {/*<Image style={styles.logo} source={require('./assets/snack-icon.png')} />*/}
+        </View>
         <View style={styles.button}>
-          <Button title="Ver Contatos" onPress={() => navigate('ContactList')} />
+          <Button title="Ver apartamentos" onPress={() => navigate('ApartmentList')} />
         </View>
         <View style={styles.button}>
           <Button title="Sair" onPress={() => BackHandler.exitApp() } />

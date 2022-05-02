@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Button} from 'react-native';
+import {Image} from 'react-native-web';
 
 export default class ContactDetailsScreen extends React.Component {
   static navigationOptions = {
@@ -8,7 +9,7 @@ export default class ContactDetailsScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    let apartment = props.navigation.getParam('contact');
+    let apartment = props.navigation.getParam('apartment');
     this.state = {
       name: apartment.name,
       email: apartment.email,
@@ -23,6 +24,9 @@ export default class ContactDetailsScreen extends React.Component {
     const { name, email, phone, lat, lng } = this.state;
     return (
       <View>
+        <View>
+          <Image style={styles.stretch} source={'https://picsum.photos/200/300'} />
+        </View>
         <View style={styles.container}>
           <Text style={styles.apartmentName}>{name}</Text>
           <Text style={styles.apartmentDetails}>E-mail: {email}</Text>
@@ -40,16 +44,21 @@ const styles = StyleSheet.create({
   container: {
     padding: 15,
   },
-  apartmentName: {
+  contactName: {
     fontSize: 18,
     fontWeight: 'bold',
     height: 44,
   },
-  apartmentDetails: {
+  contactDetails: {
     fontSize: 16,
     height: 44,
   },
   button: {
     padding: 15
-  }
+  },
+  stretch: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'cover',
+  },
 });

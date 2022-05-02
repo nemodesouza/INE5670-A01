@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Button, ActivityIndicator, SafeAreaView, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import {Image} from 'react-native-web';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class ContactListScreen extends React.Component {
   static navigationOptions = {
-    title: 'Contatos',
+    title: 'Lista de Apartamentos',
   };
 
   constructor(props){
@@ -43,15 +45,33 @@ export default class ContactListScreen extends React.Component {
       )
     }
 
+    const Item = ({ title }) => (
+      <View style={styles.item}>
+        <View>
+          <Image style={styles.stretch} source={'https://picsum.photos/200/300'} />
+        </View>
+        <View style={styles.group}>
+          <Text style={styles.title}>{ title.name }</Text>
+          <Icon.Button
+            iconStyle={{marginRight: 0}}
+            name={title.favorite ? 'star' : 'star-o'}
+            backgroundColor="#8c8c8c"
+            onPress={() => null}
+          >
+          </Icon.Button>
+        </View>
+      </View>
+    );
+
     const {navigate} = this.props.navigation;
     return(
       <ScrollView style={styles.container}>
         <FlatList
           data={this.state.contacts}
           renderItem={({item}) =>
-            <TouchableOpacity onPress={ () => navigate('ContactDetails', {contact: item})}>
+            <TouchableOpacity onPress={ () => navigate('ApartmentDetails', {apartment: item})}>
               <View>
-                <Text style={styles.contact}>{item.name}</Text>
+                <Item title={item} />
               </View>
             </TouchableOpacity>}
         />
@@ -62,11 +82,28 @@ export default class ContactListScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  item: {
+    padding: 15,
+    backgroundColor: '#e5e5e5',
+    marginBottom: 10,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#0e0e0e'
+  },
   container: {
     padding: 15
   },
-  contact: {
-    fontSize: 18,
-    height: 44,
+  stretch: {
+    height: 200,
+    resizeMode: 'cover',
+  },
+  group: {
+    marginTop: 8,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   }
 })
