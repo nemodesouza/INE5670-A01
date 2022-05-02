@@ -6,8 +6,8 @@ import {createAppContainer} from 'react-navigation';
 
 const MainNavigator = createStackNavigator({
   Home: {screen: HomeScreen},
-  ContactList: {screen: ApartmentListScreen},
-  ContactDetails: {screen: ApartmentDetailsScreen},
+  ApartmentList: {screen: ApartmentListScreen},
+  ApartmentDetails: {screen: ApartmentDetailsScreen},
 });
 
 const App = createAppContainer(MainNavigator);

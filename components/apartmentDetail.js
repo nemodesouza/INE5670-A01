@@ -1,20 +1,20 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, Linking} from 'react-native';
+import { Text, View, StyleSheet, Button} from 'react-native';
 
 export default class ContactDetailsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Dados do Contato',
+    title: 'Dados do Apartamento',
   };
 
   constructor(props) {
     super(props);
-    let contact = props.navigation.getParam('contact');
+    let apartment = props.navigation.getParam('contact');
     this.state = {
-      name: contact.name,
-      email: contact.email,
-      phone: contact.phone,
-      lat: contact.address.geo.lat,
-      lng: contact.address.geo.lng
+      name: apartment.name,
+      email: apartment.email,
+      phone: apartment.phone,
+      lat: apartment.address.geo.lat,
+      lng: apartment.address.geo.lng
     };
   }
 
@@ -24,9 +24,9 @@ export default class ContactDetailsScreen extends React.Component {
     return (
       <View>
         <View style={styles.container}>
-          <Text style={styles.contactName}>{name}</Text>
-          <Text style={styles.contactDetails}>E-mail: {email}</Text>
-          <Text style={styles.contactDetails}>Telefone: {phone}</Text>
+          <Text style={styles.apartmentName}>{name}</Text>
+          <Text style={styles.apartmentDetails}>E-mail: {email}</Text>
+          <Text style={styles.apartmentDetails}>Telefone: {phone}</Text>
         </View>
         <View style={styles.button} >
           <Button title="Voltar" onPress={() => navigate('ContactList')} />
@@ -40,12 +40,12 @@ const styles = StyleSheet.create({
   container: {
     padding: 15,
   },
-  contactName: {
+  apartmentName: {
     fontSize: 18,
     fontWeight: 'bold',
     height: 44,
   },
-  contactDetails: {
+  apartmentDetails: {
     fontSize: 16,
     height: 44,
   },
