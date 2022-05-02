@@ -15,13 +15,39 @@ export default class ContactDetailsScreen extends React.Component {
       email: apartment.email,
       phone: apartment.phone,
       lat: apartment.address.geo.lat,
-      lng: apartment.address.geo.lng
+      lng: apartment.address.geo.lng,
+      rent: 'R$ 1300,00',
+      gender: 'Feminino',
+      apartment_type: 'Individual',
+      furniture: 'Cama de solteiro, armário',
+      bathroom: 'Privativo',
+      size: '39m²',
+      pictures: '',
+      description: 'Ap mobiliado, muito chique',
+      video: '',
+      extras: 'Só dog que é aceito'
     };
   }
 
   render() {
     const { navigate } = this.props.navigation;
-    const { name, email, phone, lat, lng } = this.state;
+    const {
+      name,
+      email,
+      phone,
+      lat,
+      lng,
+      rent,
+      gender,
+      apartment_type,
+      furniture,
+      bathroom,
+      size,
+      pictures,
+      description,
+      video,
+      extras
+    } = this.state;
     return (
       <View>
         <View>
@@ -31,6 +57,27 @@ export default class ContactDetailsScreen extends React.Component {
           <Text style={styles.apartmentName}>{name}</Text>
           <Text style={styles.apartmentDetails}>E-mail: {email}</Text>
           <Text style={styles.apartmentDetails}>Telefone: {phone}</Text>
+          <View style={styles.button} >
+            <Button title="Mapa" onPress={() => null} />
+          </View>
+          <Text style={styles.apartmentDetails}>Valor: {rent}</Text>
+          <Text style={styles.apartmentDetails}>Gênero aceito: {rent}</Text>
+          <Text style={styles.apartmentDetails}>Tipo de acomodação: {apartment_type}</Text>
+          <Text style={styles.apartmentDetails}>Mobiliário: {furniture}</Text>
+          <Text style={styles.apartmentDetails}>Tipo de acomodação: {apartment_type}</Text>
+          <Text style={styles.apartmentDetails}>Banheiro: {bathroom}</Text>
+          <Text style={styles.apartmentDetails}>Área: {size}</Text>
+          <Text style={styles.apartmentDetails}>Tipo de acomodação: {apartment_type}</Text>
+          <View style={styles.button} >
+            <Button title="Imagens" onPress={() => null} />
+          </View>
+          <Text style={styles.apartmentDetails}>Detalhes: {description}</Text>
+          <View style={styles.button} >
+            <Button title="Vídeo" onPress={() => null} />
+          </View>
+          <Text style={styles.apartmentDetails}>Informações extra: {extras}</Text>
+
+
         </View>
         <View style={styles.button} >
           <Button title="Voltar" onPress={() => navigate('ContactList')} />
@@ -44,12 +91,12 @@ const styles = StyleSheet.create({
   container: {
     padding: 15,
   },
-  contactName: {
+  apartmentName: {
     fontSize: 18,
     fontWeight: 'bold',
     height: 44,
   },
-  contactDetails: {
+  apartmentDetails: {
     fontSize: 16,
     height: 44,
   },
