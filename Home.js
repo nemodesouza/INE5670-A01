@@ -42,3 +42,33 @@ const styles = StyleSheet.create({
     padding: 15
   }
 });
+
+//[
+//  '{{repeat(5, 7)}}',
+//  {
+//    _id: '{{objectId()}}',
+//    index: '{{index()}}',
+//    isActive: '{{bool()}}',
+//    rent: '{{floating(1000, 4000, 2, "R$0,0.00")}}',
+//    picture: 'https://picsum.photos/200/300',
+//    pictures: [
+//      '{{repeat(3)}}',
+//      {
+//        id: '{{index()}}',
+//        imgLink: '{{random("https://picsum.photos/199/299", "https://picsum.photos/201/301")}}'
+//      }
+//    ],
+//    rentArea: '',
+//    housingType: '{{random("masculina", "feminina", "mista")}}',
+//    acommodationType: '{{random("individual", "compartilhado")}}',
+//    bathType: '{{random("privativo", "compartilhado")}}',
+//    name: '{{firstName()}} {{surname()}}',
+//    email: '{{email()}}',
+//    phone: '+55 {{phone()}}',
+//    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+//    description: '{{lorem(1, "paragraphs")}}',
+//    lat: '{{floating(-90.000001, 90)}}',
+//    long: '{{floating(-180.000001, 180)}}',
+//    extra: '{{random("Não aceitamos cachorros", "Não aceitamos gatos", "Não aceitamos fumantes", "Não aceitamos pós graduandos", "Não aceitamos professores", "Máquinas de lavar devem funcionar entre as 8:00-22:00h", "Não é peritido conversas altas no corredor")}}'
+//  }
+//]

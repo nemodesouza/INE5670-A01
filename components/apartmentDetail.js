@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Button} from 'react-native';
 import {Image} from 'react-native-web';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class ContactDetailsScreen extends React.Component {
   static navigationOptions = {
@@ -14,18 +15,19 @@ export default class ContactDetailsScreen extends React.Component {
       name: apartment.name,
       email: apartment.email,
       phone: apartment.phone,
-      lat: apartment.address.geo.lat,
-      lng: apartment.address.geo.lng,
-      rent: 'R$ 1300,00',
-      gender: 'Feminino',
-      apartment_type: 'Individual',
+      lat: apartment.lat,
+      lng: apartment.lng,
+      rent: apartment.rent,
+      gender: apartment.housingType,
+      apartment_type: apartment.acommodationType,
       furniture: 'Cama de solteiro, armário',
-      bathroom: 'Privativo',
-      size: '39m²',
-      pictures: '',
-      description: 'Ap mobiliado, muito chique',
+      bathroom: apartment.bathType,
+      size: apartment.rentArea,
+      pictures: apartment.pictures,
+      description: apartment.description,
       video: '',
-      extras: 'Só dog que é aceito'
+      extras: apartment.extra,
+      favorited: false
     };
   }
 
@@ -46,13 +48,22 @@ export default class ContactDetailsScreen extends React.Component {
       pictures,
       description,
       video,
-      extras
+      extras,
+      favorited
     } = this.state;
     return (
       <View>
         <View>
           <Image style={styles.stretch} source={'https://picsum.photos/200/300'} />
         </View>
+        <Icon.Button
+          title={'Favoritar'}
+          iconStyle={{marginRight: 0}}
+          name={favorited ? 'star' : 'star-o'}
+          backgroundColor="#8c8c8c"
+          onPress={() => null}
+        >
+        </Icon.Button>
         <View style={styles.container}>
           <Text style={styles.apartmentName}>{name}</Text>
           <Text style={styles.apartmentDetails}>E-mail: {email}</Text>
@@ -80,7 +91,7 @@ export default class ContactDetailsScreen extends React.Component {
 
         </View>
         <View style={styles.button} >
-          <Button title="Voltar" onPress={() => navigate('ContactList')} />
+          <Button title="Voltar" onPress={() => navigate('ApartmentList')} />
         </View>
       </View>
     );

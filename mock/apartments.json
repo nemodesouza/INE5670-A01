@@ -1,0 +1,167 @@
+[
+  {
+    "_id": "6272fa2c4ceebf5f263ab10e",
+    "index": 0,
+    "isActive": false,
+    "rent": "$2,740.63",
+    "picture": "https://picsum.photos/200/300",
+    "pictures": [
+      {
+        "id": 0,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/199/299"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/199/299"
+      }
+    ],
+    "rentArea": "",
+    "housingType": "masculina",
+    "acommodationType": "individual",
+    "bathType": "compartilhado",
+    "name": "Natalia Mckee Condominio",
+    "email": "nataliamckee@orbalix.com",
+    "phone": "+55 (994) 517-3517",
+    "address": "252 Middleton Street, Marbury, Palau, 2211",
+    "description": "Adipisicing non nostrud ipsum nostrud elit incididunt sint duis culpa Lorem incididunt officia ullamco. Proident sit mollit proident et ipsum quis. Lorem minim pariatur id officia consequat esse. Adipisicing mollit quis nisi ut enim.\r\n",
+    "lat": -65.256419,
+    "long": 88.195015,
+    "extra": "Não aceitamos pós graduandos"
+  },
+  {
+    "_id": "6272fa2cdecb6186ebf094f6",
+    "index": 1,
+    "isActive": true,
+    "rent": "$2,447.54",
+    "picture": "https://picsum.photos/200/300",
+    "pictures": [
+      {
+        "id": 0,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/201/301"
+      }
+    ],
+    "rentArea": "",
+    "housingType": "masculina",
+    "acommodationType": "individual",
+    "bathType": "compartilhado",
+    "name": "Sarah Robinson Residencial",
+    "email": "sarahrobinson@orbalix.com",
+    "phone": "+55 (980) 549-2239",
+    "address": "278 Haring Street, Glidden, New York, 3692",
+    "description": "Dolor non occaecat elit dolor. Dolore nulla amet labore cillum mollit aute laborum nisi incididunt. Aute enim pariatur incididunt pariatur eiusmod do eiusmod officia reprehenderit minim. Pariatur enim ad eiusmod eu enim in eu commodo qui et consectetur. Lorem veniam pariatur tempor cupidatat velit ut ut excepteur voluptate ea proident in.\r\n",
+    "lat": -2.515501,
+    "long": -120.523933,
+    "extra": "Máquinas de lavar devem funcionar entre as 8:00-22:00h"
+  },
+  {
+    "_id": "6272fa2cef9dd839d92e1abf",
+    "index": 2,
+    "isActive": false,
+    "rent": "$1,241.46",
+    "picture": "https://picsum.photos/200/300",
+    "pictures": [
+      {
+        "id": 0,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/201/301"
+      }
+    ],
+    "rentArea": "",
+    "housingType": "mista",
+    "acommodationType": "compartilhado",
+    "bathType": "compartilhado",
+    "name": "Colleen Berry Residencial",
+    "email": "colleenberry@orbalix.com",
+    "phone": "+55 (864) 422-2335",
+    "address": "168 Hart Place, Foxworth, California, 2179",
+    "description": "Quis id nulla dolor aute. Dolore laborum sit occaecat non dolore aliqua. Magna eu nulla eu cillum laborum duis ut nostrud esse nulla officia aliqua commodo est. Quis sint et exercitation in. Aliquip occaecat ad exercitation voluptate sint cupidatat laboris reprehenderit mollit eiusmod quis. Fugiat eu elit in excepteur excepteur reprehenderit do in dolore tempor do fugiat consequat.\r\n",
+    "lat": 35.236778,
+    "long": -11.538181,
+    "extra": "Máquinas de lavar devem funcionar entre as 8:00-22:00h"
+  },
+  {
+    "_id": "6272fa2ce3d713ba8bc7e976",
+    "index": 3,
+    "isActive": false,
+    "rent": "$1,618.45",
+    "picture": "https://picsum.photos/200/300",
+    "pictures": [
+      {
+        "id": 0,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/199/299"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/201/301"
+      }
+    ],
+    "rentArea": "",
+    "housingType": "mista",
+    "acommodationType": "compartilhado",
+    "bathType": "privativo",
+    "name": "Simone Brady Residencial",
+    "email": "simonebrady@orbalix.com",
+    "phone": "+55 (853) 505-3294",
+    "address": "359 Cadman Plaza, Kenwood, Washington, 1401",
+    "description": "Consectetur officia reprehenderit labore laborum ipsum excepteur nulla irure amet ut mollit laboris deserunt tempor. Aliquip magna veniam aute quis velit. In voluptate duis qui occaecat et enim labore esse Lorem et do deserunt. Amet cupidatat id anim nulla deserunt cillum voluptate. Eu excepteur cupidatat mollit ea elit officia amet aliquip. Adipisicing dolor ut consectetur cupidatat.\r\n",
+    "lat": -89.884772,
+    "long": 134.726025,
+    "extra": "Não aceitamos gatos"
+  },
+  {
+    "_id": "6272fa2c2c8f9a7b75727e63",
+    "index": 4,
+    "isActive": true,
+    "rent": "$3,759.43",
+    "picture": "https://picsum.photos/200/300",
+    "pictures": [
+      {
+        "id": 0,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/199/299"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/199/299"
+      }
+    ],
+    "rentArea": "",
+    "housingType": "mista",
+    "acommodationType": "individual",
+    "bathType": "compartilhado",
+    "name": "Lambert Mack Apartamento",
+    "email": "lambertmack@orbalix.com",
+    "phone": "+55 (856) 544-2029",
+    "address": "840 Guider Avenue, Gila, Massachusetts, 2577",
+    "description": "Nostrud aliqua anim aute sit quis non mollit esse ipsum laborum pariatur. Cupidatat ullamco ea ut esse consectetur ipsum ut. Commodo aliqua exercitation officia tempor aliqua. Mollit ut laborum ex anim nulla fugiat magna officia ipsum aliquip. Eiusmod laboris pariatur sint exercitation nostrud. Nisi tempor esse tempor Lorem incididunt tempor et.\r\n",
+    "lat": -54.451424,
+    "long": 81.658327,
+    "extra": "Não é peritido conversas altas no corredor"
+  }
+]
