@@ -72,13 +72,11 @@ export default class ContactDetailsScreen extends React.Component {
             <Button title="Mapa" onPress={() => null} />
           </View>
           <Text style={styles.apartmentDetails}>Valor: {rent}</Text>
-          <Text style={styles.apartmentDetails}>Gênero aceito: {rent}</Text>
+          <Text style={styles.apartmentDetails}>Gênero aceito: {gender}</Text>
           <Text style={styles.apartmentDetails}>Tipo de acomodação: {apartment_type}</Text>
           <Text style={styles.apartmentDetails}>Mobiliário: {furniture}</Text>
-          <Text style={styles.apartmentDetails}>Tipo de acomodação: {apartment_type}</Text>
           <Text style={styles.apartmentDetails}>Banheiro: {bathroom}</Text>
           <Text style={styles.apartmentDetails}>Área: {size}</Text>
-          <Text style={styles.apartmentDetails}>Tipo de acomodação: {apartment_type}</Text>
           <View style={styles.button} >
             <Button title="Imagens" onPress={() => null} />
           </View>
