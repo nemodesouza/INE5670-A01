@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, ActivityIndicator, SafeAreaView, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import {ActivityIndicator, Button, FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {Image} from 'react-native-web';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import apartmentLit from '../mock/apartments.json'
 
 export default class ContactListScreen extends React.Component {
   static navigationOptions = {
@@ -16,15 +16,25 @@ export default class ContactListScreen extends React.Component {
     }
   }
 
-  componentDidMount(){
+  async componentDidMount(){
     const { navigation } = this.props;
+    const isFavorite = navigation.getParam('favorites');
+    const apartments = JSON.parse(await this.getApartmentListStorage(isFavorite));
 
     this.focusListener = navigation.addListener('didFocus', () => {
         this.setState({
           isLoading: false,
-          apartments: apartmentLit,
+          apartments,
         });
     });
+  }
+
+  getApartmentListStorage(isFavorite) {
+    if (isFavorite) {
+      return AsyncStorage.getItem('apartment_list_favorited');
+    } else {
+      return AsyncStorage.getItem('apartment_list');
+    }
   }
 
   componentWillUnmount() {
@@ -32,12 +42,29 @@ export default class ContactListScreen extends React.Component {
   }
 
   render() {
+    const {navigate} = this.props.navigation;
+    let listSection;
+
     if(this.state.isLoading){
       return(
         <View style={{flex: 1, padding: 20}}>
           <ActivityIndicator/>
         </View>
       )
+    }
+
+    const updateFavorite = (id) => {
+      let newList = [];
+      this.state.apartments.map((item) => {
+        if (item._id === id) {
+          item.isFavorited = !item.isFavorited;
+        }
+        newList.push(item);
+      });
+      AsyncStorage.setItem('apartment_list',JSON.stringify(newList));
+      const favoritesList = newList.filter((item) => item.isFavorited);
+      AsyncStorage.setItem('apartment_list_favorited', JSON.stringify(favoritesList))
+      this.setState({apartments: newList});
     }
 
     const Item = ({ title }) => (
@@ -47,22 +74,34 @@ export default class ContactListScreen extends React.Component {
         </View>
         <View style={styles.group}>
           <Text style={styles.title}>{ title.name }</Text>
+          <Icon.Button
+            iconStyle={{marginRight: 0}}
+            name={title.isFavorited ? 'star' : 'star-o'}
+            backgroundColor="#8c8c8c"
+            onPress={() => updateFavorite(title._id)}
+          >
+          </Icon.Button>
         </View>
       </View>
     );
 
-    const {navigate} = this.props.navigation;
+    if (!this.state.apartments) {
+      listSection = <Text>Não encontramos nenhum apartamento aqui</Text>
+    } else {
+      listSection = <FlatList
+        data={this.state.apartments}
+        renderItem={({item}) =>
+          <TouchableOpacity onPress={ () => navigate('ApartmentDetails', {apartment: item})}>
+            <View>
+              <Item key={item.index} title={item} />
+            </View>
+          </TouchableOpacity>}
+      />
+    }
+
     return(
       <ScrollView style={styles.container}>
-        <FlatList
-          data={this.state.apartments}
-          renderItem={({item}) =>
-            <TouchableOpacity onPress={ () => navigate('ApartmentDetails', {apartment: item})}>
-              <View>
-                <Item title={item} />
-              </View>
-            </TouchableOpacity>}
-        />
+        { listSection }
         <Button title="Voltar" onPress={() => navigate('Home')} />
       </ScrollView>
     );

@@ -1,14 +1,15 @@
 [
   {
-    "_id": "6272fa2c4ceebf5f263ab10e",
+    "_id": "6273f54aac69c63c0e9b37cf",
     "index": 0,
-    "isActive": false,
-    "rent": "$2,740.63",
-    "picture": "https://picsum.photos/200/300",
+    "isActive": true,
+    "isFavorited": false,
+    "rent": "$3,400.05",
+    "picture": "https://picsum.photos/202/302",
     "pictures": [
       {
         "id": 0,
-        "imgLink": "https://picsum.photos/201/301"
+        "imgLink": "https://picsum.photos/199/299"
       },
       {
         "id": 1,
@@ -20,28 +21,199 @@
       }
     ],
     "rentArea": "",
+    "housingType": "feminina",
+    "acommodationType": "compartilhado",
+    "bathType": "privativo",
+    "name": "Phelps Bray Condominio",
+    "email": "phelpsbray@hyplex.com",
+    "phone": "+55 (905) 591-2226",
+    "address": "558 Porter Avenue, Nipinnawasee, Vermont, 639",
+    "description": "Ex dolor aliqua aute quis id ad exercitation anim laboris. Consectetur est dolor aliquip tempor excepteur quis ad nisi exercitation. Lorem duis voluptate voluptate aliqua cupidatat nisi commodo ullamco duis voluptate amet. Occaecat aliquip magna sunt culpa occaecat. Eiusmod mollit excepteur laboris nisi pariatur proident amet sit aute.\r\n",
+    "lat": -38.505907,
+    "long": 130.272211,
+    "extra": "Não aceitamos fumantes"
+  },
+  {
+    "_id": "6273f54aeb60199bbe133f62",
+    "index": 1,
+    "isActive": false,
+    "isFavorited": false,
+    "rent": "$3,526.63",
+    "picture": "https://picsum.photos/202/302",
+    "pictures": [
+      {
+        "id": 0,
+        "imgLink": "https://picsum.photos/199/299"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/199/299"
+      }
+    ],
+    "rentArea": "",
+    "housingType": "mista",
+    "acommodationType": "individual",
+    "bathType": "privativo",
+    "name": "Watkins Porter Apartamento",
+    "email": "watkinsporter@hyplex.com",
+    "phone": "+55 (832) 463-3467",
+    "address": "237 Campus Place, Lithium, West Virginia, 2181",
+    "description": "Aliquip exercitation cupidatat qui incididunt elit est do. Voluptate do cillum aute culpa minim nulla exercitation tempor non fugiat laborum ullamco consectetur est. Mollit amet elit exercitation elit eiusmod excepteur cupidatat dolor irure reprehenderit incididunt quis ullamco non. Ad mollit eiusmod velit aute cillum culpa Lorem reprehenderit deserunt labore. Ipsum et duis aliquip irure aute quis. Aliquip mollit cupidatat esse laboris. Sunt fugiat incididunt cillum id incididunt Lorem sit adipisicing labore ea consectetur incididunt laborum.\r\n",
+    "lat": -15.688575,
+    "long": 165.418955,
+    "extra": "Não é peritido conversas altas no corredor"
+  },
+  {
+    "_id": "6273f54a536190b9f47ba1bd",
+    "index": 2,
+    "isActive": true,
+    "isFavorited": true,
+    "rent": "$3,849.73",
+    "picture": "https://picsum.photos/202/302",
+    "pictures": [
+      {
+        "id": 0,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/199/299"
+      }
+    ],
+    "rentArea": "",
+    "housingType": "mista",
+    "acommodationType": "individual",
+    "bathType": "compartilhado",
+    "name": "Eve Hood Condominio",
+    "email": "evehood@hyplex.com",
+    "phone": "+55 (928) 563-2324",
+    "address": "891 Meeker Avenue, Wildwood, Idaho, 1483",
+    "description": "Sit anim eu id sunt ea laborum est minim non et. Aliquip esse officia cillum fugiat incididunt non et do ex laboris quis consequat sint magna. Id quis reprehenderit velit deserunt excepteur cupidatat sunt. Cupidatat deserunt ut est laborum incididunt officia deserunt ut. Deserunt reprehenderit id anim non ea irure do ex irure esse ullamco elit sint incididunt.\r\n",
+    "lat": -83.645305,
+    "long": 117.119638,
+    "extra": "Máquinas de lavar devem funcionar entre as 8:00-22:00h"
+  },
+  {
+    "_id": "6273f54af63a391d69ef9bdd",
+    "index": 3,
+    "isActive": false,
+    "isFavorited": false,
+    "rent": "$1,620.70",
+    "picture": "https://picsum.photos/202/302",
+    "pictures": [
+      {
+        "id": 0,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/201/301"
+      }
+    ],
+    "rentArea": "",
     "housingType": "masculina",
     "acommodationType": "individual",
     "bathType": "compartilhado",
-    "name": "Natalia Mckee Condominio",
-    "email": "nataliamckee@orbalix.com",
-    "phone": "+55 (994) 517-3517",
-    "address": "252 Middleton Street, Marbury, Palau, 2211",
-    "description": "Adipisicing non nostrud ipsum nostrud elit incididunt sint duis culpa Lorem incididunt officia ullamco. Proident sit mollit proident et ipsum quis. Lorem minim pariatur id officia consequat esse. Adipisicing mollit quis nisi ut enim.\r\n",
-    "lat": -65.256419,
-    "long": 88.195015,
+    "name": "Evangeline Benjamin Apartamento",
+    "email": "evangelinebenjamin@hyplex.com",
+    "phone": "+55 (883) 409-3524",
+    "address": "260 Visitation Place, Linwood, Tennessee, 4266",
+    "description": "Non pariatur exercitation Lorem culpa ullamco consectetur non ad. Officia consectetur id Lorem elit. Est esse nisi quis quis consectetur. Lorem culpa consectetur mollit nulla culpa eu est fugiat. Quis nulla est ea nulla cupidatat incididunt ut do officia est anim. Id anim fugiat irure amet excepteur Lorem amet eiusmod sint.\r\n",
+    "lat": -63.915419,
+    "long": -25.058502,
+    "extra": "Não é peritido conversas altas no corredor"
+  },
+  {
+    "_id": "6273f54a639b3f45ad7fe3c7",
+    "index": 4,
+    "isActive": false,
+    "isFavorited": true,
+    "rent": "$2,861.70",
+    "picture": "https://picsum.photos/198/298",
+    "pictures": [
+      {
+        "id": 0,
+        "imgLink": "https://picsum.photos/199/299"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/199/299"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/201/301"
+      }
+    ],
+    "rentArea": "",
+    "housingType": "masculina",
+    "acommodationType": "individual",
+    "bathType": "privativo",
+    "name": "Noreen York Condominio",
+    "email": "noreenyork@hyplex.com",
+    "phone": "+55 (951) 403-3347",
+    "address": "251 Nassau Street, Loretto, Connecticut, 903",
+    "description": "Duis in cupidatat nulla ea officia qui. Duis aliquip ullamco qui cillum. Nulla tempor exercitation commodo labore sit excepteur labore do nostrud labore labore ullamco.\r\n",
+    "lat": -11.312334,
+    "long": 123.824259,
+    "extra": "Máquinas de lavar devem funcionar entre as 8:00-22:00h"
+  },
+  {
+    "_id": "6273f54a3fdd6d54b5e4c975",
+    "index": 5,
+    "isActive": true,
+    "isFavorited": false,
+    "rent": "$1,910.25",
+    "picture": "https://picsum.photos/202/302",
+    "pictures": [
+      {
+        "id": 0,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/199/299"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/201/301"
+      }
+    ],
+    "rentArea": "",
+    "housingType": "mista",
+    "acommodationType": "individual",
+    "bathType": "compartilhado",
+    "name": "Lilian Cunningham Residencial",
+    "email": "liliancunningham@hyplex.com",
+    "phone": "+55 (955) 477-2160",
+    "address": "537 Minna Street, Caroline, Northern Mariana Islands, 767",
+    "description": "Sint occaecat pariatur sint eu sint excepteur officia ea nulla labore eiusmod ad nulla. Nostrud veniam esse est ad qui Lorem consequat dolor tempor cillum nulla adipisicing. Pariatur nostrud occaecat voluptate proident. Magna consectetur proident velit voluptate et. Quis velit aliqua et laborum cillum dolor dolor ex cupidatat eu tempor tempor officia fugiat. Cupidatat dolor cillum aliquip Lorem elit occaecat deserunt incididunt velit.\r\n",
+    "lat": 1.473561,
+    "long": -27.66194,
     "extra": "Não aceitamos pós graduandos"
   },
   {
-    "_id": "6272fa2cdecb6186ebf094f6",
-    "index": 1,
+    "_id": "6273f54a4c393e614788e447",
+    "index": 6,
     "isActive": true,
-    "rent": "$2,447.54",
-    "picture": "https://picsum.photos/200/300",
+    "isFavorited": false,
+    "rent": "$1,784.52",
+    "picture": "https://picsum.photos/202/302",
     "pictures": [
       {
         "id": 0,
-        "imgLink": "https://picsum.photos/201/301"
+        "imgLink": "https://picsum.photos/199/299"
       },
       {
         "id": 1,
@@ -49,102 +221,71 @@
       },
       {
         "id": 2,
+        "imgLink": "https://picsum.photos/199/299"
+      }
+    ],
+    "rentArea": "",
+    "housingType": "feminina",
+    "acommodationType": "compartilhado",
+    "bathType": "compartilhado",
+    "name": "Lillian Snow Condominio",
+    "email": "lilliansnow@hyplex.com",
+    "phone": "+55 (957) 482-3242",
+    "address": "169 Hull Street, Lopezo, Nebraska, 6339",
+    "description": "Officia irure enim enim ea mollit nostrud Lorem enim ut ad. Pariatur excepteur enim id pariatur est. Deserunt cupidatat elit velit minim anim dolor cupidatat et cupidatat. Ullamco laborum do labore reprehenderit minim veniam est. Qui nisi sint occaecat deserunt est aliquip occaecat Lorem irure cupidatat amet.\r\n",
+    "lat": -83.502078,
+    "long": 148.61575,
+    "extra": "Não aceitamos gatos"
+  },
+  {
+    "_id": "6273f54a7260111252f1ecbb",
+    "index": 7,
+    "isActive": false,
+    "isFavorited": true,
+    "rent": "$1,663.89",
+    "picture": "https://picsum.photos/202/302",
+    "pictures": [
+      {
+        "id": 0,
         "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/199/299"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/199/299"
       }
     ],
     "rentArea": "",
     "housingType": "masculina",
-    "acommodationType": "individual",
-    "bathType": "compartilhado",
-    "name": "Sarah Robinson Residencial",
-    "email": "sarahrobinson@orbalix.com",
-    "phone": "+55 (980) 549-2239",
-    "address": "278 Haring Street, Glidden, New York, 3692",
-    "description": "Dolor non occaecat elit dolor. Dolore nulla amet labore cillum mollit aute laborum nisi incididunt. Aute enim pariatur incididunt pariatur eiusmod do eiusmod officia reprehenderit minim. Pariatur enim ad eiusmod eu enim in eu commodo qui et consectetur. Lorem veniam pariatur tempor cupidatat velit ut ut excepteur voluptate ea proident in.\r\n",
-    "lat": -2.515501,
-    "long": -120.523933,
-    "extra": "Máquinas de lavar devem funcionar entre as 8:00-22:00h"
-  },
-  {
-    "_id": "6272fa2cef9dd839d92e1abf",
-    "index": 2,
-    "isActive": false,
-    "rent": "$1,241.46",
-    "picture": "https://picsum.photos/200/300",
-    "pictures": [
-      {
-        "id": 0,
-        "imgLink": "https://picsum.photos/201/301"
-      },
-      {
-        "id": 1,
-        "imgLink": "https://picsum.photos/201/301"
-      },
-      {
-        "id": 2,
-        "imgLink": "https://picsum.photos/201/301"
-      }
-    ],
-    "rentArea": "",
-    "housingType": "mista",
-    "acommodationType": "compartilhado",
-    "bathType": "compartilhado",
-    "name": "Colleen Berry Residencial",
-    "email": "colleenberry@orbalix.com",
-    "phone": "+55 (864) 422-2335",
-    "address": "168 Hart Place, Foxworth, California, 2179",
-    "description": "Quis id nulla dolor aute. Dolore laborum sit occaecat non dolore aliqua. Magna eu nulla eu cillum laborum duis ut nostrud esse nulla officia aliqua commodo est. Quis sint et exercitation in. Aliquip occaecat ad exercitation voluptate sint cupidatat laboris reprehenderit mollit eiusmod quis. Fugiat eu elit in excepteur excepteur reprehenderit do in dolore tempor do fugiat consequat.\r\n",
-    "lat": 35.236778,
-    "long": -11.538181,
-    "extra": "Máquinas de lavar devem funcionar entre as 8:00-22:00h"
-  },
-  {
-    "_id": "6272fa2ce3d713ba8bc7e976",
-    "index": 3,
-    "isActive": false,
-    "rent": "$1,618.45",
-    "picture": "https://picsum.photos/200/300",
-    "pictures": [
-      {
-        "id": 0,
-        "imgLink": "https://picsum.photos/201/301"
-      },
-      {
-        "id": 1,
-        "imgLink": "https://picsum.photos/199/299"
-      },
-      {
-        "id": 2,
-        "imgLink": "https://picsum.photos/201/301"
-      }
-    ],
-    "rentArea": "",
-    "housingType": "mista",
     "acommodationType": "compartilhado",
     "bathType": "privativo",
-    "name": "Simone Brady Residencial",
-    "email": "simonebrady@orbalix.com",
-    "phone": "+55 (853) 505-3294",
-    "address": "359 Cadman Plaza, Kenwood, Washington, 1401",
-    "description": "Consectetur officia reprehenderit labore laborum ipsum excepteur nulla irure amet ut mollit laboris deserunt tempor. Aliquip magna veniam aute quis velit. In voluptate duis qui occaecat et enim labore esse Lorem et do deserunt. Amet cupidatat id anim nulla deserunt cillum voluptate. Eu excepteur cupidatat mollit ea elit officia amet aliquip. Adipisicing dolor ut consectetur cupidatat.\r\n",
-    "lat": -89.884772,
-    "long": 134.726025,
-    "extra": "Não aceitamos gatos"
+    "name": "Cheri Mercer Apartamento",
+    "email": "cherimercer@hyplex.com",
+    "phone": "+55 (825) 437-3861",
+    "address": "346 Coffey Street, Orviston, Washington, 876",
+    "description": "Ea irure laborum excepteur magna aute officia. Nostrud reprehenderit proident exercitation occaecat aliquip sint Lorem ad non pariatur nisi sint consectetur. Elit occaecat commodo consequat non. Ad fugiat mollit et est anim fugiat deserunt excepteur sit laboris. Culpa eu officia amet et irure laboris et reprehenderit consequat ea velit. Esse amet qui enim fugiat pariatur laboris duis.\r\n",
+    "lat": 14.889442,
+    "long": -78.064403,
+    "extra": "Não aceitamos cachorros"
   },
   {
-    "_id": "6272fa2c2c8f9a7b75727e63",
-    "index": 4,
+    "_id": "6273f54a16a4e33f840d82cc",
+    "index": 8,
     "isActive": true,
-    "rent": "$3,759.43",
-    "picture": "https://picsum.photos/200/300",
+    "isFavorited": true,
+    "rent": "$2,082.57",
+    "picture": "https://picsum.photos/202/302",
     "pictures": [
       {
         "id": 0,
-        "imgLink": "https://picsum.photos/201/301"
+        "imgLink": "https://picsum.photos/199/299"
       },
       {
         "id": 1,
-        "imgLink": "https://picsum.photos/199/299"
+        "imgLink": "https://picsum.photos/201/301"
       },
       {
         "id": 2,
@@ -152,16 +293,50 @@
       }
     ],
     "rentArea": "",
-    "housingType": "mista",
+    "housingType": "feminina",
     "acommodationType": "individual",
     "bathType": "compartilhado",
-    "name": "Lambert Mack Apartamento",
-    "email": "lambertmack@orbalix.com",
-    "phone": "+55 (856) 544-2029",
-    "address": "840 Guider Avenue, Gila, Massachusetts, 2577",
-    "description": "Nostrud aliqua anim aute sit quis non mollit esse ipsum laborum pariatur. Cupidatat ullamco ea ut esse consectetur ipsum ut. Commodo aliqua exercitation officia tempor aliqua. Mollit ut laborum ex anim nulla fugiat magna officia ipsum aliquip. Eiusmod laboris pariatur sint exercitation nostrud. Nisi tempor esse tempor Lorem incididunt tempor et.\r\n",
-    "lat": -54.451424,
-    "long": 81.658327,
-    "extra": "Não é peritido conversas altas no corredor"
+    "name": "Cruz Ramirez Condominio",
+    "email": "cruzramirez@hyplex.com",
+    "phone": "+55 (943) 417-3419",
+    "address": "698 Amber Street, Jugtown, Massachusetts, 7817",
+    "description": "Excepteur adipisicing nisi enim adipisicing sit. Tempor in magna excepteur laboris nisi qui tempor cillum laborum enim adipisicing sit ad est. Laborum anim aliqua ut nostrud reprehenderit reprehenderit est exercitation magna dolore nulla. Aliquip esse adipisicing qui elit esse occaecat mollit quis ipsum sunt quis ad et. Occaecat proident aute do cupidatat culpa ex labore excepteur id adipisicing ex. In mollit qui elit pariatur.\r\n",
+    "lat": 63.141052,
+    "long": -44.801498,
+    "extra": "Não aceitamos pós graduandos"
+  },
+  {
+    "_id": "6273f54ac5084c67065eb316",
+    "index": 9,
+    "isActive": false,
+    "isFavorited": true,
+    "rent": "$3,499.79",
+    "picture": "https://picsum.photos/198/298",
+    "pictures": [
+      {
+        "id": 0,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 1,
+        "imgLink": "https://picsum.photos/201/301"
+      },
+      {
+        "id": 2,
+        "imgLink": "https://picsum.photos/199/299"
+      }
+    ],
+    "rentArea": "",
+    "housingType": "masculina",
+    "acommodationType": "compartilhado",
+    "bathType": "compartilhado",
+    "name": "Mcpherson Mcgee Condominio",
+    "email": "mcphersonmcgee@hyplex.com",
+    "phone": "+55 (832) 499-3951",
+    "address": "849 Bassett Avenue, Castleton, Puerto Rico, 2801",
+    "description": "Enim occaecat laboris elit non. Amet aliqua magna eu commodo qui culpa velit qui minim elit ex. Laboris sint nulla anim aliqua pariatur laboris reprehenderit occaecat et nostrud aliquip velit cillum minim. Nulla laboris ea sunt sunt non non dolor exercitation ut laboris reprehenderit. Minim labore minim incididunt enim sit magna fugiat mollit ex elit consequat magna. Est irure laboris reprehenderit labore aliquip excepteur quis et eu magna voluptate.\r\n",
+    "lat": 71.844057,
+    "long": -32.543975,
+    "extra": "Não aceitamos pós graduandos"
   }
 ]

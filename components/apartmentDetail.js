@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Button} from 'react-native';
 import {Image} from 'react-native-web';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class ContactDetailsScreen extends React.Component {
   static navigationOptions = {
@@ -34,6 +33,7 @@ export default class ContactDetailsScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     const {
+      id,
       name,
       email,
       phone,
@@ -56,16 +56,9 @@ export default class ContactDetailsScreen extends React.Component {
         <View>
           <Image style={styles.stretch} source={'https://picsum.photos/200/300'} />
         </View>
-        <Icon.Button
-          title={'Favoritar'}
-          iconStyle={{marginRight: 0}}
-          name={favorited ? 'star' : 'star-o'}
-          backgroundColor="#8c8c8c"
-          onPress={() => null}
-        >
-        </Icon.Button>
+
         <View style={styles.container}>
-          <Text style={styles.apartmentName}>{name}</Text>
+          <Text style={styles.apartmentName}>{this.state.favorited}</Text>
           <Text style={styles.apartmentDetails}>E-mail: {email}</Text>
           <Text style={styles.apartmentDetails}>Telefone: {phone}</Text>
           <View style={styles.button} >
