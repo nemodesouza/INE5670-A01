@@ -1,6 +1,6 @@
 import HomeScreen from './Home';
-import ApartmentListScreen from './components/apartmentList';
-import ApartmentDetailsScreen from './components/apartmentDetail';
+import ApartmentListScreen from './pages/apartmentList';
+import ApartmentDetailsScreen from './pages/apartmentDetail';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 

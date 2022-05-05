@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, Image, Button, BackHandler, StyleSheet } from 'react-native';
+import {BackHandler, Button, StyleSheet, View} from 'react-native';
 import apartmentList from './mock/apartments.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -13,22 +13,22 @@ export default class HomeScreen extends React.Component {
     this.saveApartmentsOnStorage();
   }
 
+  // Função para salvar os apartamentos do mock no AsyncStorage.
   saveApartmentsOnStorage() {
     if (this.hasApartmentListStorage()) return;
+    // Salva na lista geral
     AsyncStorage.setItem('apartment_list', JSON.stringify(apartmentList));
-
-    //  Set favorites
-    let favoritesList = apartmentList;
-    favoritesList = favoritesList.filter((item) => item.isFavorited);
+    // Salva na lista de favoritos
+    const favoritesList = apartmentList.filter((item) => item.isFavorited);
     AsyncStorage.setItem('apartment_list_favorited', JSON.stringify(favoritesList))
   }
 
+  // Checa se já existe lista de apartamento salvo no AsyncStorage.
   hasApartmentListStorage() {
     return !!AsyncStorage.getItem('apartment_list')
   }
 
   render() {
-
     const {navigate} = this.props.navigation;
     return (
       <View>
@@ -36,13 +36,13 @@ export default class HomeScreen extends React.Component {
           {/*<Image style={styles.logo} source={require('./assets/snack-icon.png')} />*/}
         </View>
         <View style={styles.button}>
-          <Button title="Ver apartamentos" onPress={() => navigate('ApartmentList', { favorites: false})} />
+          <Button title="Ver apartamentos" onPress={() => navigate('ApartmentList', {favorites: false})}/>
         </View>
         <View style={styles.button}>
-          <Button title="Ver apartamentos favoritados" onPress={() => navigate('ApartmentList', { favorites: true})} />
+          <Button title="Ver apartamentos favoritados" onPress={() => navigate('ApartmentList', {favorites: true})}/>
         </View>
         <View style={styles.button}>
-          <Button title="Sair" onPress={() => BackHandler.exitApp() } />
+          <Button title="Sair" onPress={() => BackHandler.exitApp()}/>
         </View>
       </View>
     );
