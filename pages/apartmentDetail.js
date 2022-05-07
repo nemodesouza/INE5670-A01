@@ -1,15 +1,15 @@
-import * as React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
-import {Image} from 'react-native-web';
+import * as React from "react";
+import { Button, StyleSheet, Text, View } from "react-native";
+import { Image } from "react-native-web";
 
 export default class ContactDetailsScreen extends React.Component {
   static navigationOptions = {
-    title: 'Dados do Apartamento',
+    title: "Dados do Apartamento",
   };
 
   constructor(props) {
     super(props);
-    let apartment = props.navigation.getParam('apartment');
+    let apartment = props.navigation.getParam("apartment");
     this.state = {
       name: apartment.name,
       email: apartment.email,
@@ -19,19 +19,19 @@ export default class ContactDetailsScreen extends React.Component {
       rent: apartment.rent,
       gender: apartment.housingType,
       apartment_type: apartment.acommodationType,
-      furniture: 'Cama de solteiro, armário',
+      furniture: "Cama de solteiro, armário",
       bathroom: apartment.bathType,
       size: apartment.rentArea,
       pictures: apartment.pictures,
       description: apartment.description,
-      video: '',
+      video: "",
       extras: apartment.extra,
-      favorited: false
+      favorited: false,
     };
   }
 
   render() {
-    const {navigate} = this.props.navigation;
+    const { navigate } = this.props.navigation;
     const {
       id,
       name,
@@ -49,12 +49,15 @@ export default class ContactDetailsScreen extends React.Component {
       description,
       video,
       extras,
-      favorited
+      favorited,
     } = this.state;
     return (
       <View>
         <View>
-          <Image style={styles.stretch} source={'https://picsum.photos/200/300'}/>
+          <Image
+            style={styles.stretch}
+            source={"https://picsum.photos/200/300"}
+          />
         </View>
 
         <View style={styles.container}>
@@ -62,27 +65,29 @@ export default class ContactDetailsScreen extends React.Component {
           <Text style={styles.apartmentDetails}>E-mail: {email}</Text>
           <Text style={styles.apartmentDetails}>Telefone: {phone}</Text>
           <View style={styles.button}>
-            <Button title="Mapa" onPress={() => null}/>
+            <Button title="Mapa" onPress={() => null} />
           </View>
           <Text style={styles.apartmentDetails}>Valor: {rent}</Text>
           <Text style={styles.apartmentDetails}>Gênero aceito: {gender}</Text>
-          <Text style={styles.apartmentDetails}>Tipo de acomodação: {apartment_type}</Text>
+          <Text style={styles.apartmentDetails}>
+            Tipo de acomodação: {apartment_type}
+          </Text>
           <Text style={styles.apartmentDetails}>Mobiliário: {furniture}</Text>
           <Text style={styles.apartmentDetails}>Banheiro: {bathroom}</Text>
           <Text style={styles.apartmentDetails}>Área: {size}</Text>
           <View style={styles.button}>
-            <Button title="Imagens" onPress={() => null}/>
+            <Button title="Imagens" onPress={() => null} />
           </View>
-          <Text style={styles.apartmentDetails}>Detalhes: {description}</Text>
+          <Text style={styles.details}>Detalhes: {description}</Text>
           <View style={styles.button}>
-            <Button title="Vídeo" onPress={() => null}/>
+            <Button title="Vídeo" onPress={() => null} />
           </View>
-          <Text style={styles.apartmentDetails}>Informações extra: {extras}</Text>
-
-
+          <Text style={styles.apartmentDetails}>
+            Informações extra: {extras}
+          </Text>
         </View>
         <View style={styles.button}>
-          <Button title="Voltar" onPress={() => navigate('ApartmentList')}/>
+          <Button title="Voltar" onPress={() => navigate("ApartmentList")} />
         </View>
       </View>
     );
@@ -95,7 +100,7 @@ const styles = StyleSheet.create({
   },
   apartmentName: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     height: 44,
   },
   apartmentDetails: {
@@ -103,11 +108,16 @@ const styles = StyleSheet.create({
     height: 44,
   },
   button: {
-    padding: 15
+    padding: 15,
   },
   stretch: {
-    width: '100%',
+    width: "100%",
     height: 200,
-    resizeMode: 'cover',
+    resizeMode: "cover",
+  },
+  details: {
+    width: "100%",
+    height: 200,
+    resizeMode: "cover",
   },
 });
