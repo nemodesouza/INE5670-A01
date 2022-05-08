@@ -11,7 +11,6 @@ export default class ContactDetailsScreen extends React.Component {
   constructor(props) {
     super(props);
     let apartment = props.navigation.getParam("apartment");
-    console.log(apartment);
     this.state = {
       picture: apartment.picture,
       name: apartment.name,
