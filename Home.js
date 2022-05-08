@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
   ImageBackground,
+  Image,
   BackHandler,
   Button,
   StyleSheet,
@@ -8,7 +9,6 @@ import {
 } from "react-native";
 import apartmentList from "./mock/apartments.json";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -22,8 +22,7 @@ export default class HomeScreen extends React.Component {
 
   // Função para salvar os apartamentos do mock no AsyncStorage.
   saveApartmentsOnStorage() {
-    
-    this.hasApartmentListStorage().then((haslist) => {      
+    this.hasApartmentListStorage().then((haslist) => {
       if (haslist) return;
       // Salva na lista geral
       AsyncStorage.setItem("apartment_list", JSON.stringify(apartmentList));
@@ -46,17 +45,21 @@ export default class HomeScreen extends React.Component {
 
     return (
       <ImageBackground
-        source={require('./assets/background.png')}
+        source={require("./assets/background.png")}
         resizeMode="cover"
-        style={styles.image}>
-
+        style={styles.image}
+      >
         <View>
-          <View style={styles.container}>
-            
+          <View style={styles.topBox}>
+            <Image
+              style={styles.logoTop}
+              source={require("./assets/logo.png")}
+            />
           </View>
+          <View style={styles.container}></View>
           <View style={styles.button}>
             <Button
-              title="Ver apartamentos"
+              title="Ver Apartamentos"
               onPress={() => navigate("ApartmentList", { favorites: false })}
             />
           </View>
@@ -79,12 +82,18 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     justifyContent: "center",
-    padding: 160,
-    // backgroundImage: 'url(https://images.unsplash.com/photo-1551250928-243dc937c49d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2luZ2xlJTIwYnVpbGRpbmd8ZW58MHx8MHx8&w=1000&q=80)',
+    padding: 0,
   },
   logo: {
     height: 160,
     width: 160,
+  },
+  logoTop: {
+    padding: 160,
+    alignItems: "center",
+    height: "50%",
+    width: "50%",
+    opacity: 0.7,
   },
   image: {
     flex: 1,
@@ -95,36 +104,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   button: {
+    color: "white",
     padding: 15,
   },
+  topBox: {
+    alignItems: "center",
+  },
 });
-
-// [
-//   '{{repeat(5, 7)}}',
-//   {
-//     _id: '{{objectId()}}',
-//     index: '{{index()}}',
-//     isActive: '{{bool()}}',
-//     rent: '{{floating(1000, 4000, 2, "R$0,0.00")}}',
-//     picture: '{{random("https://picsum.photos/198/298", "https://picsum.photos/202/302")}}',
-//     pictures: [
-//       '{{repeat(3)}}',
-//       {
-//         id: '{{index()}}',
-//         imgLink: '{{random("https://picsum.photos/199/299", "https://picsum.photos/201/301")}}'
-//       }
-//     ],
-//     rentArea: '',
-//     housingType: '{{random("masculina", "feminina", "mista")}}',
-//     acommodationType: '{{random("individual", "compartilhado")}}',
-//     bathType: '{{random("privativo", "compartilhado")}}',
-//     name: '{{firstName()}} {{surname()}} {{random("Apartamento", "Residencial", "Condominio")}}',
-//     email: '{{email()}}',
-//     phone: '+55 {{phone()}}',
-//     address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
-//     description: '{{lorem(1, "paragraphs")}}',
-//     lat: '{{floating(-90.000001, 90)}}',
-//     long: '{{floating(-180.000001, 180)}}',
-//     extra: '{{random("Não aceitamos cachorros", "Não aceitamos gatos", "Não aceitamos fumantes", "Não aceitamos pós graduandos", "Não aceitamos professores", "Máquinas de lavar devem funcionar entre as 8:00-22:00h", "Não é peritido conversas altas no corredor")}}'
-//   }
-// ]
