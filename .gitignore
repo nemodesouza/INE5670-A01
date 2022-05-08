@@ -16,3 +16,6 @@ web-build/
 
 #drive files
 *.ini
+
+#yarn files
+yarn.lock
