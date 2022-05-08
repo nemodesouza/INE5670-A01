@@ -8,8 +8,8 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Image,
 } from "react-native";
-import { Image } from "react-native-web";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Icon from "react-native-vector-icons/FontAwesome";
 
@@ -91,7 +91,7 @@ export default class ContactListScreen extends React.Component {
     const Item = ({ title }) => (
       <View style={styles.item}>
         <View>
-          <Image style={styles.stretch} source={title.picture} />
+          <Image style={styles.stretch} source={{ uri: title.picture }} />
         </View>
         <View style={styles.group}>
           <Text style={styles.title}>{title.name}</Text>
@@ -127,7 +127,14 @@ export default class ContactListScreen extends React.Component {
     return (
       <ScrollView style={styles.container}>
         {listSection}
+        <View style={styles.bottomSpace}>
+
+        </View>
         <Button title="Voltar" onPress={() => navigate("Home")} />
+        <View style={styles.bottomSpace}>
+
+        </View>
+        
       </ScrollView>
     );
   }
@@ -146,6 +153,11 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 15,
+    paddingBottom: 18,
+  },
+  bottomSpace:{
+    paddingTop: 30,
+    paddingBottom: 30,
   },
   stretch: {
     height: 200,
