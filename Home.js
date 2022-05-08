@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import apartmentList from "./mock/apartments.json";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-// import background from './assets/background.png';
+
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -45,28 +45,32 @@ export default class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
 
     return (
-      <View>
-        <View style={styles.container}>
-          {/* <ImageBackground source={background} resizeMode="cover" style={styles.image}/> */}
-          {/* <Image style={styles.image} source={background} resizeMode="cover"/> */}
-          {/* <Image style={styles.logo} source={require('./assets/snack-icon.png')} /> */}
+      <ImageBackground
+        source={require('./assets/background.png')}
+        resizeMode="cover"
+        style={styles.image}>
+
+        <View>
+          <View style={styles.container}>
+            
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="Ver apartamentos"
+              onPress={() => navigate("ApartmentList", { favorites: false })}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="Ver favoritos"
+              onPress={() => navigate("ApartmentList", { favorites: true })}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button title="Sair" onPress={() => BackHandler.exitApp()} />
+          </View>
         </View>
-        <View style={styles.button}>
-          <Button
-            title="Ver apartamentos"
-            onPress={() => navigate("ApartmentList", { favorites: false })}
-          />
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="Ver favoritos"
-            onPress={() => navigate("ApartmentList", { favorites: true })}
-          />
-        </View>
-        <View style={styles.button}>
-          <Button title="Sair" onPress={() => BackHandler.exitApp()} />
-        </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
