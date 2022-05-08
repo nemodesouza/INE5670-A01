@@ -41,8 +41,7 @@ export default class ContactListScreen extends React.Component {
   }
 
   // Função para obter as listas de apartamentos do AsyncStorage.
-  getApartmentListStorage(isFavorite) {
-    console.log("apartment_list");
+  getApartmentListStorage(isFavorite) {    
     if (isFavorite) return AsyncStorage.getItem("apartment_list_favorited");
     else return AsyncStorage.getItem("apartment_list");
   }
