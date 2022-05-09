@@ -8,11 +8,11 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Icon from "react-native-vector-icons/FontAwesome";
-
+//
 export default class ContactListScreen extends React.Component {
   static navigationOptions = {
     title: "Lista de Apartamentos",

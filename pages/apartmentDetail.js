@@ -1,8 +1,20 @@
 import * as React from "react";
-import { Button, Dimensions, StyleSheet, ScrollView, Text, View, Image } from "react-native";
+import {
+  Button,
+  Platform,
+  StyleSheet,
+  ScrollView,
+  Text,
+  Linking,
+  View,
+  Image,
+} from "react-native";
 
-const{width} = Dimensions.get('window');
-const height = width * 0.6;
+const OSid = Platform.select({
+  ios: 1,
+  android: 2,
+});
+//
 export default class ContactDetailsScreen extends React.Component {
   static navigationOptions = {
     title: "Dados do Apartamento",
@@ -17,7 +29,7 @@ export default class ContactDetailsScreen extends React.Component {
       email: apartment.email,
       phone: apartment.phone,
       lat: apartment.lat,
-      lng: apartment.lng,
+      long: apartment.long,
       rent: apartment.rent,
       gender: apartment.housingType,
       apartment_type: apartment.acommodationType,
@@ -40,7 +52,7 @@ export default class ContactDetailsScreen extends React.Component {
       email,
       phone,
       lat,
-      lng,
+      long,
       rent,
       gender,
       apartment_type,
@@ -54,69 +66,74 @@ export default class ContactDetailsScreen extends React.Component {
       extras,
       favorited,
     } = this.state;
+
     return (
       <ScrollView style={styles.container}>
-        <View>        
-            <View>
-              <Image style={styles.stretch} source={{ uri: picture }} />
-            </View>
+        <View>
+          <View>
+            <Image style={styles.stretch} source={{ uri: picture }} />
+          </View>
 
-            <View style={styles.container}>              
-              <Text style={styles.apartmentName}>{this.state.favorited}</Text>
-              <Text style={styles.apartmentName}>{name}</Text>
-              <Text style={styles.apartmentDetails}>Detalhes: {description}</Text>
-              <View style={styles.bottomSpace} />              
-            </View>
+          <View style={styles.container}>
+            <Text style={styles.apartmentName}>{this.state.favorited}</Text>
+            <Text style={styles.apartmentName}>{name}</Text>
+            <Text style={styles.apartmentDetails}>Detalhes: {description}</Text>
+            <View style={styles.bottomSpace} />
+          </View>
 
-            <View style={styles.button}>
-              <Button title="Mapa" onPress={() => null} />
-            </View>
+          <View style={styles.button}>
+            <Button
+              onPress={() =>
+                Linking.openURL(
+                  OSid === 1
+                    ? `maps:0,0?q=${lat},${long}`
+                    : OSid === 2
+                    ? `geo:0,0?q=${lat},${long}`
+                    : ""
+                )
+              }
+              title="Localização"
+            />
+          </View>
 
-            <View style={styles.container}>
+          <View style={styles.container}>
+            <Text style={styles.apartmentInfo}>E-mail: {email}</Text>
+            <Text style={styles.apartmentInfo}>Telefone: {phone}</Text>
+            <Text style={styles.apartmentInfo}>Gênero aceito: {gender}</Text>
+            <Text style={styles.apartmentInfo}>
+              Tipo de acomodação: {apartment_type}
+            </Text>
+            <Text style={styles.apartmentInfo}>Mobiliário: {furniture}</Text>
+            <Text style={styles.apartmentInfo}>Banheiro: {bathroom}</Text>
+            <Text style={styles.apartmentInfo}>Área: {size}</Text>
+          </View>
 
-              <Text style={styles.apartmentInfo}>E-mail: {email}</Text>
-              <Text style={styles.apartmentInfo}>Telefone: {phone}</Text>                    
-              <Text style={styles.apartmentInfo}>Gênero aceito: {gender}</Text>
-              <Text style={styles.apartmentInfo}>
-                Tipo de acomodação: {apartment_type}
-              </Text>
-              <Text style={styles.apartmentInfo}>Mobiliário: {furniture}</Text>
-              <Text style={styles.apartmentInfo}>Banheiro: {bathroom}</Text>
-              <Text style={styles.apartmentInfo}>Área: {size}</Text>
-            </View>
+          <View style={styles.button}>
+            <Button title="Imagens" onPress={() => null} />
+          </View>
 
-            <View style={styles.button}>
-              <Button title="Imagens" onPress={() => null} />
-            </View>
-
-            <View style={styles.container}>
+          <View style={styles.container}>
             <Text style={styles.apartmentName}>Valor: {rent}</Text>
-            </View>
+          </View>
 
-            <View style={styles.button}>
-              <Button title="Vídeo" onPress={() => null} />
-            </View>
-            
-            <View style={styles.container}>
-              <Text style={styles.apartmentDetails}>
-                Informações extra: {extras}
-              </Text>
-            </View>
+          <View style={styles.button}>
+            <Button title="Vídeo" onPress={() => null} />
+          </View>
 
-            <View style={styles.bottomSpace}>
+          <View style={styles.container}>
+            <Text style={styles.apartmentDetails}>
+              Informações extra: {extras}
+            </Text>
+          </View>
 
-            </View>
+          <View style={styles.bottomSpace}></View>
 
-            <View style={styles.button}>
-              <Button title="Voltar" onPress={() => navigate("ApartmentList")} />
-            </View>
+          <View style={styles.button}>
+            <Button title="Voltar" onPress={() => navigate("ApartmentList")} />
+          </View>
 
-            <View style={styles.bottomSpace}>
-            </View>
-            
+          <View style={styles.bottomSpace}></View>
         </View>
-
-        
       </ScrollView>
     );
   }
@@ -128,10 +145,10 @@ const styles = StyleSheet.create({
     marginRight: 12,
     padding: 15,
   },
-  flex: {  
-    flex: 1,  
-    flexDirection: 'column',
-    justifyContent: 'space-around',
+  flex: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "space-around",
     padding: 8,
   },
   apartmentName: {
@@ -141,7 +158,7 @@ const styles = StyleSheet.create({
   },
   apartmentDetails: {
     fontSize: 16,
-    height: 'auto',
+    height: "auto",
   },
   apartmentInfo: {
     fontSize: 12,
@@ -158,7 +175,7 @@ const styles = StyleSheet.create({
     height: 200,
     resizeMode: "cover",
   },
-  bottomSpace:{
+  bottomSpace: {
     paddingTop: 24,
     paddingBottom: 24,
   },
