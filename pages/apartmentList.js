@@ -3,12 +3,12 @@ import {
   ActivityIndicator,
   Button,
   FlatList,
-  ScrollView,
+  Image,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
-  Image,
+  View
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -26,7 +26,7 @@ export default class ContactListScreen extends React.Component {
   }
 
   async componentDidMount() {
-    const { navigation } = this.props;
+    const {navigation} = this.props;
     const isFavorite = navigation.getParam("favorites");
     const apartments = JSON.parse(
       await this.getApartmentListStorage(isFavorite)
@@ -41,7 +41,7 @@ export default class ContactListScreen extends React.Component {
   }
 
   // Função para obter as listas de apartamentos do AsyncStorage.
-  getApartmentListStorage(isFavorite) {    
+  getApartmentListStorage(isFavorite) {
     if (isFavorite) return AsyncStorage.getItem("apartment_list_favorited");
     else return AsyncStorage.getItem("apartment_list");
   }
@@ -51,13 +51,13 @@ export default class ContactListScreen extends React.Component {
   }
 
   render() {
-    const { navigate } = this.props.navigation;
+    const {navigate} = this.props.navigation;
     let listSection;
 
     if (this.state.isLoading) {
       return (
-        <View style={{ flex: 1, padding: 20 }}>
-          <ActivityIndicator />
+        <View style={{flex: 1, padding: 20}}>
+          <ActivityIndicator/>
         </View>
       );
     }
@@ -84,18 +84,18 @@ export default class ContactListScreen extends React.Component {
         "apartment_list_favorited",
         JSON.stringify(favoritesList)
       );
-      this.setState({ apartments: newList });
+      this.setState({apartments: newList});
     };
 
-    const Item = ({ title }) => (
+    const Item = ({title}) => (
       <View style={styles.item}>
         <View>
-          <Image style={styles.stretch} source={{ uri: title.picture }} />
+          <Image style={styles.stretch} source={{uri: title.picture}}/>
         </View>
         <View style={styles.group}>
           <Text style={styles.title}>{title.name}</Text>
           <Icon.Button
-            iconStyle={{ marginRight: 0 }}
+            iconStyle={{marginRight: 0}}
             name={title.isFavorited ? "star" : "star-o"}
             backgroundColor="#8c8c8c"
             onPress={() => updateListStorage(title._id)}
@@ -105,17 +105,26 @@ export default class ContactListScreen extends React.Component {
     );
 
     if (!this.state.apartments) {
-      listSection = <Text>Não encontramos nenhum apartamento aqui</Text>;
+      listSection = (
+        <View styles={styles.container}>
+          <Text>Não encontramos nenhum apartamento aqui</Text>
+          <Button title="Voltar" onPress={() => navigate("Home")}/>
+        </View>
+      );
     } else {
       listSection = (
         <FlatList
+          keyExtractor={(title) => title._id.toString()}
           data={this.state.apartments}
-          renderItem={({ item }) => (
+          ListFooterComponent={
+            <Button title="Voltar" onPress={() => navigate("Home")}/>
+          }
+          renderItem={({item}) => (
             <TouchableOpacity
-              onPress={() => navigate("ApartmentDetails", { apartment: item })}
+              onPress={() => navigate("ApartmentDetails", {apartment: item})}
             >
               <View>
-                <Item key={item.index} title={item} />
+                <Item key={item.index} title={item}/>
               </View>
             </TouchableOpacity>
           )}
@@ -124,17 +133,9 @@ export default class ContactListScreen extends React.Component {
     }
 
     return (
-      <ScrollView style={styles.container}>
+      <SafeAreaView styles={styles.container}>
         {listSection}
-        <View style={styles.bottomSpace}>
-
-        </View>
-        <Button title="Voltar" onPress={() => navigate("Home")} />
-        <View style={styles.bottomSpace}>
-
-        </View>
-        
-      </ScrollView>
+      </SafeAreaView>
     );
   }
 }
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
     padding: 15,
     paddingBottom: 18,
   },
-  bottomSpace:{
+  bottomSpace: {
     paddingTop: 30,
     paddingBottom: 30,
   },
