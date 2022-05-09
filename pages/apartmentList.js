@@ -41,8 +41,7 @@ export default class ContactListScreen extends React.Component {
   }
 
   // Função para obter as listas de apartamentos do AsyncStorage.
-  getApartmentListStorage(isFavorite) {
-    console.log("apartment_list");
+  getApartmentListStorage(isFavorite) {    
     if (isFavorite) return AsyncStorage.getItem("apartment_list_favorited");
     else return AsyncStorage.getItem("apartment_list");
   }
@@ -109,8 +108,9 @@ export default class ContactListScreen extends React.Component {
       listSection = <Text>Não encontramos nenhum apartamento aqui</Text>;
     } else {
       listSection = (
-        <FlatList
+        <FlatList          
           data={this.state.apartments}
+          keyExtractor={(title) => title._id.toString()}
           renderItem={({ item }) => (
             <TouchableOpacity
               onPress={() => navigate("ApartmentDetails", { apartment: item })}
