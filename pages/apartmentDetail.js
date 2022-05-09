@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import {
   Button,
   Platform,
@@ -7,18 +8,23 @@ import {
   Text,
   Linking,
   View,
+  Modal,
   Image,
 } from "react-native";
+
 
 const OSid = Platform.select({
   ios: 1,
   android: 2,
 });
-//
+
+
 export default class ContactDetailsScreen extends React.Component {
   static navigationOptions = {
     title: "Dados do Apartamento",
   };
+
+  
 
   constructor(props) {
     super(props);
@@ -38,12 +44,12 @@ export default class ContactDetailsScreen extends React.Component {
       size: apartment.rentArea,
       pictures: apartment.pictures,
       description: apartment.description,
-      video: "",
+      video: "https://youtu.be/5y-hnM13Lsw",
       extras: apartment.extra,
       favorited: false,
     };
   }
-
+  
   render() {
     const { navigate } = this.props.navigation;
     const {
@@ -69,6 +75,7 @@ export default class ContactDetailsScreen extends React.Component {
 
     return (
       <ScrollView style={styles.container}>
+
         <View>
           <View>
             <Image style={styles.stretch} source={{ uri: picture }} />
@@ -109,7 +116,7 @@ export default class ContactDetailsScreen extends React.Component {
           </View>
 
           <View style={styles.button}>
-            <Button title="Imagens" onPress={() => null} />
+            <Button title="Imagens" onPress={()=> null} />
           </View>
 
           <View style={styles.container}>
@@ -117,7 +124,7 @@ export default class ContactDetailsScreen extends React.Component {
           </View>
 
           <View style={styles.button}>
-            <Button title="Vídeo" onPress={() => null} />
+            <Button title="Vídeo" onPress={() => Linking.openURL(video)} />
           </View>
 
           <View style={styles.container}>
@@ -179,9 +186,22 @@ const styles = StyleSheet.create({
     paddingTop: 24,
     paddingBottom: 24,
   },
+  modalContent: {
+    flex: 1,
+
+  },
+  modalToggle: {
+    marginBottom:10,
+    borderWidth: 1,
+    borderColor: '#F2F2F2',
+    padding: 10,
+    alignSelf: 'center',
+  }
   // details: {
   //   width: "100%",
   //   height: 200,
   //   resizeMode: "cover",
   // },
 });
+
+
